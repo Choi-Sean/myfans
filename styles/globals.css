@@ -1,0 +1,24 @@
+:root {
+    --bg: #ffffff;
+    --text: #000000;
+    --card: #f8f9fa;
+    --card-2: #eceef0;
+    --border: #d1d5db;
+    --brand: #5865f2;
+    --radius: 12px;
+    --muted: #555;
+}
+
+[data-theme="dark"] {
+    --bg: #0b0b0d;
+    --text: #eaeaf0;
+    --card: #15161a;
+    --card-2: #0f1013;
+    --border: #24262c;
+    --muted: #9aa0ad;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}

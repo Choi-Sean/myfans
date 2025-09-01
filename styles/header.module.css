@@ -1,0 +1,36 @@
+.nav{
+    position: sticky; top:0; z-index:10;
+    display:flex; gap:16px; align-items:center; justify-content:space-between;
+    padding:14px 20px;
+    background: color-mix(in srgb, var(--bg) 85%, transparent); /* 밝은/어두운 배경 모두 대응 */
+    backdrop-filter: blur(8px);
+    border-bottom:1px solid var(--border);
+  }
+  .logo{ font-weight:800; letter-spacing:0.2px; font-size:20px; color:var(--text); }
+  
+  .search{ display:flex; gap:8px; align-items:center; width:min(560px, 60%); }
+  .search input{
+    flex:1; padding:10px 12px; background:var(--card);
+    color:var(--text); border:1px solid var(--border); border-radius:8px;
+  }
+  .search button{
+    padding:10px 12px; border:1px solid var(--border); background:var(--card);
+    color:var(--text); border-radius:8px; cursor:pointer;
+  }
+  
+  .actions{ display:flex; gap:12px; align-items:center; }
+  .link{ color:var(--muted); }
+  .btnPrimary{
+    padding:10px 14px; background:var(--brand); color:#fff;
+    border-radius:10px; font-weight:700; border:0; display:inline-block;
+  }
+  .themeBtn {
+    padding: 8px 12px;
+    background: var(--card-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--text);
+    font-size: 14px;
+  }
+  .themeBtn:hover { background: var(--card); }
