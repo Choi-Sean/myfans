@@ -25,7 +25,7 @@ export default async function ConfirmPage({ params, searchParams }) {
         <div className={styles.wrap}>
             <h1 className={styles.title}>Welcome, {displayName || "subscriber"}! 🎉</h1>
             <p className={styles.lead}>
-                You're now subscribed to <strong>{creator.name}</strong> ({creator.handle}) on the <strong>{plan}</strong> plan.
+                You&apos;re now subscribed to <strong>{creator.name}</strong> ({creator.handle}) on the <strong>{plan}</strong> plan.
             </p>
             <div className={styles.box}>
                 <img className={styles.avatar} src={creator.avatar} alt={`${creator.name} avatar`} />
