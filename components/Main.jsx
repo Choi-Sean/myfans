@@ -70,10 +70,10 @@ export default function Main() {
           content.
         </p>
         <div className={styles.heroActions}>
-          <a className={styles.btnPrimary} href="/signup">
+          <a className={styles.btnPrimary} href="/user/signup">
             Create free account
           </a>
-          <a className={styles.btnGhost} href="/create">
+          <a className={styles.btnGhost} href="/creator/signup">
             Become a creator
           </a>
         </div>

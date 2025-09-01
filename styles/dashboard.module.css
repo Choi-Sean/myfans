@@ -1,0 +1,216 @@
+.wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 12px 40px;
+}
+
+.title {
+    font-size: 22px;
+    margin: 6px 0 12px;
+}
+
+.kpis {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+@media (min-width: 900px) {
+    .kpis {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.kpiLabel {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.kpiValue {
+    margin: 6px 0 0;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.grid2 {
+    display: grid;
+    gap: 12px;
+}
+
+@media (min-width: 1024px) {
+    .grid2 {
+        grid-template-columns: 1.2fr 1fr;
+    }
+}
+
+.panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.panelHead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.panelTitle {
+    margin: 0;
+    font-size: 16px;
+}
+
+.note {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.chartWrap {
+    overflow: auto;
+}
+
+.chart {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.axis {
+    stroke: var(--border);
+    stroke-width: 1;
+}
+
+.bar {
+    fill: var(--brand);
+    opacity: .9;
+}
+
+.tick {
+    fill: var(--muted);
+    font-size: 10px;
+}
+
+.tableWrap {
+    overflow: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    border-bottom: 1px solid var(--border);
+    padding: 8px;
+    text-align: left;
+}
+
+.empty {
+    text-align: center;
+    color: var(--muted);
+}
+
+.formRow {
+    display: grid;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+@media (min-width: 720px) {
+    .formRow {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        align-items: end;
+    }
+}
+
+.formRow label {
+    display: grid;
+    gap: 6px;
+}
+
+.formRow input,
+.formRow select {
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--card-2);
+    color: var(--text);
+}
+
+.btn {
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--card-2);
+    color: var(--text);
+    cursor: pointer;
+}
+
+.primary {
+    padding: 10px 12px;
+    border: 0;
+    border-radius: 10px;
+    background: var(--brand);
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* ...기존 스타일 유지 + 아래만 추가 ... */
+
+.toolbar {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.segmented {
+    display: flex;
+    gap: 4px;
+    background: var(--card-2);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 2px;
+}
+
+.segBtn {
+    padding: 6px 10px;
+    background: transparent;
+    border: 0;
+    color: var(--text);
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.segActive {
+    background: var(--card);
+    border: 1px solid var(--border);
+}
+
+.metaRow {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.line {
+    stroke: var(--brand);
+    stroke-width: 2;
+}

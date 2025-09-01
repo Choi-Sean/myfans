@@ -13,6 +13,11 @@ export const metadata = {
   description: "OnlyFans 느낌의 구독형 MyFans 데모 (순수 CSS)",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

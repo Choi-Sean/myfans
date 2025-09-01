@@ -2,7 +2,7 @@
 import { notFound } from "next/navigation";
 import { fetchCreatorByHandle, fetchCreatorPosts } from "@/lib/api";
 import CreatorHeader from "../../../components/CreatorHeader";
-import LockedFeed from "../../../components//LockedFeed";
+import LockedFeed from "../../../components/LockedFeed";
 import styles from "@/styles/creator.module.css";
 
 export async function generateMetadata({ params }) {

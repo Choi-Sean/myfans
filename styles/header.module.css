@@ -1,30 +1,56 @@
+/* === 공통 === */
 .nav{
     position: sticky; top:0; z-index:10;
-    display:flex; gap:16px; align-items:center; justify-content:space-between;
-    padding:14px 20px;
-    background: color-mix(in srgb, var(--bg) 85%, transparent); /* 밝은/어두운 배경 모두 대응 */
-    backdrop-filter: blur(8px);
+    display:grid; grid-template-columns:auto 1fr auto; gap:12px; align-items:center;
+    padding:12px 12px;
+    background: var(--card);
     border-bottom:1px solid var(--border);
   }
-  .logo{ font-weight:800; letter-spacing:0.2px; font-size:20px; color:var(--text); }
+  .logo{ font-weight:800; font-size:18px; color:var(--text); text-decoration:none; }
   
-  .search{ display:flex; gap:8px; align-items:center; width:min(560px, 60%); }
-  .search input{
-    flex:1; padding:10px 12px; background:var(--card);
-    color:var(--text); border:1px solid var(--border); border-radius:8px;
+  /* 데스크톱 전용 영역 기본 숨김 */
+  .centerNav{ display:none; }
+  .search{ display:none; }
+  .actions{ display:none; }
+  
+  /* 모바일 우측: 로그인 + 버거 */
+  .mobileGroup{ display:flex; gap:8px; align-items:center; justify-self:end; }
+  .loginMobile{
+    color:var(--muted); text-decoration:none; font-size:14px; white-space:nowrap;
   }
-  .search button{
-    padding:10px 12px; border:1px solid var(--border); background:var(--card);
-    color:var(--text); border-radius:8px; cursor:pointer;
+  .burger{
+    width:38px; height:34px; border-radius:8px; border:1px solid var(--border);
+    background:var(--card-2); color:var(--text); cursor:pointer; font-size:18px; line-height:1;
   }
   
-  .actions{ display:flex; gap:12px; align-items:center; }
-  .link{ color:var(--muted); }
+  /* ≥ 768px: 검색 노출 */
+  @media (min-width: 768px){
+    .search{ display:flex; gap:8px; align-items:center; }
+    .search input{
+      min-width:220px; flex:1; padding:10px 12px; background:var(--card-2);
+      color:var(--text); border:1px solid var(--border); border-radius:8px;
+    }
+    .search button{
+      padding:10px 12px; border:1px solid var(--border); background:var(--card);
+      color:var(--text); border-radius:8px; cursor:pointer;
+    }
+  }
+  
+  /* ≥ 1024px: 데스크톱 레이아웃 */
+  @media (min-width: 1024px){
+    .nav{ grid-template-columns:auto 1fr 2fr auto; padding:14px 20px; }
+    .centerNav{ display:flex; gap:14px; }
+    .centerNav a{ color:var(--text); opacity:.9; text-decoration:none; }
+    .actions{ display:flex; gap:12px; align-items:center; }
+    .mobileGroup{ display:none; } /* 데스크톱에서는 버거/모바일 로그인 숨김 */
+  }
+  
+  .link{ color:var(--muted); text-decoration:none; }
   .btnPrimary{
     padding:10px 14px; background:var(--brand); color:#fff;
     border-radius:10px; font-weight:700; border:0; display:inline-block;
   }
-  .themeBtn {
+  .themeBtn{
     padding: 8px 12px;
     background: var(--card-2);
     border: 1px solid var(--border);
@@ -34,3 +60,63 @@
     font-size: 14px;
   }
   .themeBtn:hover { background: var(--card); }
+  
+  /* 역할 스위치 */
+  .roleSwitch{
+    display:flex; background:var(--card-2); border:1px solid var(--border); border-radius:999px; padding:2px;
+  }
+  .roleBtn{
+    padding:6px 10px; border:0; background:transparent; color:var(--text);
+    border-radius:999px; cursor:pointer; font-size:13px;
+  }
+  .roleActive{ background:var(--card); border:1px solid var(--border); }
+  
+  /* === 모바일 드로어 === */
+  .backdrop{
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.5);
+    opacity: 0; pointer-events: none;
+    transition: opacity .2s ease;
+  }
+  .backdrop.show{ opacity: 1; pointer-events: auto; }
+  
+  .drawer{
+    position: fixed; top:0; right:0; height:100vh;
+    width: 80vw; max-width: 360px;
+    background: var(--card);
+    border-left: 1px solid var(--border);
+    transform: translateX(100%);
+    transition: transform .2s ease;
+    display:flex; flex-direction:column; gap:12px; padding:12px;
+    z-index: 20;
+  }
+  .drawer.open{ transform: translateX(0); }
+  
+  .drawerTop{
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .drawerTitle{ font-weight:700; }
+  .close{
+    width:36px; height:32px; border-radius:8px; border:1px solid var(--border);
+    background:var(--card-2); color:var(--text); cursor:pointer; font-size:18px; line-height:1;
+  }
+  
+  .drawerSection{ display:grid; gap:10px; }
+  .drawerNav{ display:grid; gap:10px; }
+  .drawerNav a{ color:var(--text); text-decoration:none; }
+  .primaryLink{
+    display:inline-block; padding:10px 12px; border-radius:10px; background:var(--brand); color:#fff; text-align:center;
+  }
+  
+  .searchMobile{
+    display:flex; gap:8px; align-items:center; margin-top:auto; /* 아래쪽 배치 */
+  }
+  .searchMobile input{
+    flex:1; padding:10px 12px; background:var(--card-2);
+    color:var(--text); border:1px solid var(--border); border-radius:8px;
+  }
+  .searchMobile button{
+    padding:10px 12px; border:1px solid var(--border); background:var(--card);
+    color:var(--text); border-radius:8px; cursor:pointer;
+  }
+  
