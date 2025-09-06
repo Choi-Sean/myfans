@@ -1,0 +1,48 @@
+.wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px 12px 60px;
+}
+
+.title {
+    margin: 0 0 8px;
+    font-size: 28px;
+}
+
+.updated {
+    color: var(--muted);
+    font-size: 13px;
+    margin: 0 0 20px;
+}
+
+.section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    margin: 12px 0;
+}
+
+.section h2 {
+    margin: 0 0 8px;
+    font-size: 18px;
+}
+
+.section p {
+    margin: 8px 0;
+}
+
+.section ul {
+    margin: 8px 0 0 18px;
+}
+
+a.inline {
+    color: var(--text);
+    text-decoration: underline;
+}
+
+@media (min-width: 840px) {
+    .wrap {
+        padding: 28px 20px 80px;
+    }
+}
